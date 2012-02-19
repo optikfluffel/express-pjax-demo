@@ -1,9 +1,10 @@
-## Express-pjax Demo
+Express-pjax Demo
+=================
 
-This is a NodeJS demo for `defunkt's jquery-pjax`__ using `dakatsuka's express-pjax`__.
+This is a NodeJS demo for https://github.com/defunkt/jquery-pjax using http://github.com/dakatsuka/express-pjax.
 
-## Installation
+Installation
+------------
 
-```
-npm install 
-```
+    npm install 
+
