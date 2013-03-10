@@ -3,18 +3,9 @@ html(lang='en')
   head
     meta(charset='utf-8')
     title
-      if( title )
-        != title
-        |  - 
-      | pjax
-    // iOS chromeless and native-app:y, if run from a homescreen bookmark
-    meta(name="apple-mobile-web-app-capable",content="yes")
-    // and then make that bookmark look at least a smidge respectable too
-    link(rel="apple-touch-icon", href="/pjax-57.png", sizes="57x57")
-    link(rel="apple-touch-icon", href="/pjax-72.png", sizes="72x72")
-    link(rel="apple-touch-icon", href="/pjax-114.png", sizes="114x114")
-    // finally, make the page-top bar somewhat respectably toned down too
-    meta(name="apple-mobile-web-app-status-bar-style", content="black")
+      if title
+        #{title} -
+      |  pjax
 
     script(src="jquery.js")
     script(src="jquery.cookie.js")
@@ -23,7 +14,7 @@ html(lang='en')
     script(src="jquery.pjax.js")
     script(type="text/javascript")
       $(function(){
-        // pjax
+        // enable pjax
         $('ul a').pjax('#main')
       })
 
@@ -42,7 +33,7 @@ html(lang='en')
 
 body
   <pre>
-  | 
+  |
   |                ／￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣
   |                | <b> It's #{ new Date() } </b>
   |                ＼＿　 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
@@ -69,4 +60,4 @@ body
   </pre>
 
 div#main
-  != body
+  block main
