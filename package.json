@@ -5,7 +5,7 @@
   "description": "pjax-demo using express-pjax and jquery-pjax",
   "dependencies": {
     "express": "~3.1.0",
-    "express-pjax": "~0.0.1",
+    "express-pjax": "git://github.com/optikfluffel/express-pjax.git",
     "jade": "~0.28.2"
   },
   "scripts": {
