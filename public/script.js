@@ -1,20 +1,22 @@
 $(function() {
-  $(':checkbox').attr('checked', $.cookie('pjax'))
+  var checkbox = $(':checkbox');
 
-  if ( !$(':checkbox').attr('checked') )
-    $.fn.pjax = $.noop
+  checkbox.attr('checked', $.cookie('pjax'));
 
-  $(':checkbox').change(function() {
+  if ( !checkbox.is(':checked') )
+    $.fn.pjax = $.noop;
+
+  checkbox.change(function() {
     if ( $.pjax == $.noop ) {
-      $(this).removeAttr('checked')
-      return alert( "Sorry, your browser doesn't support pjax :(" )
+      checkbox.attr('checked', false);
+      return alert( 'Sorry, your browser doesn\'t support pjax :(' );
     }
 
-    if ( $(this).attr('checked') )
-      $.cookie('pjax', true)
+    if ( checkbox.is(':checked') )
+      $.cookie('pjax', true);
     else
-      $.cookie('pjax', null)
+      $.cookie('pjax', null);
 
-    window.location = location.href
-  })
+    window.location = location.href;
+  });
 });
